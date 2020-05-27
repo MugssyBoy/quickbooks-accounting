@@ -8,7 +8,7 @@ class Quickbooks {
 
     createConnection(config) {
         this.oauthClient = new OAuthClient(config);
-        this.authUri = oauthClient.authorizeUri({
+        this.authUri = this.oauthClient.authorizeUri({
             scope: [
                 OAuthClient.scopes.Accounting
             ]

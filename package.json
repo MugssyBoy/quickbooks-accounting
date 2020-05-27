@@ -1,6 +1,6 @@
 {
   "name": "quickbooks-accounting",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Simplified NodeJS Quickbooks Accounting Integration",
   "main": "index.js",
   "dependencies": {
