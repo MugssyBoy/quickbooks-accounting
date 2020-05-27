@@ -1,0 +1,31 @@
+{
+  "name": "quickbooks-accounting",
+  "version": "1.0.0",
+  "description": "Simplified NodeJS Quickbooks Accounting Integration",
+  "main": "index.js",
+  "dependencies": {
+    "intuit-oauth": "^3.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MugssyBoy/quickbooks-accounting.git"
+  },
+  "keywords": [
+    "quickbooks",
+    "quickbooks",
+    "integration",
+    "quickbooks",
+    "api",
+    "intuit"
+  ],
+  "author": "Alexis Michael Rizon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MugssyBoy/quickbooks-accounting/issues"
+  },
+  "homepage": "https://github.com/MugssyBoy/quickbooks-accounting#readme"
+}
