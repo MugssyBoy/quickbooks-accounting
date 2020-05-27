@@ -1,25 +1,34 @@
 const OAuthClient = require('intuit-oauth');
 
+let oauthClient, authUri;
+
 class Quickbooks {
-    constructor(oauthClient, authUri) {
-        this.oauthClient = oauthClient;
-        this.authUri = authUri;
-    }
 
     createConnection(config) {
-        this.oauthClient = new OAuthClient(config);
-        this.authUri = this.oauthClient.authorizeUri({
+        oauthClient = new OAuthClient(config);
+        authUri = oauthClient.authorizeUri({
             scope: [
                 OAuthClient.scopes.Accounting
             ]
         })
+        return authUri
     }
 
     createToken(url) {
-        let uri = this.oauthClient.createToken(url)
+        let uri = oauthClient.createToken(url)
         console.log(uri)
     }
 
 };
 
-module.exports = Quickbooks;
+//module.exports = Quickbooks;
+
+let qb = new Quickbooks()
+let uri = qb.createConnection({
+    clientId: "ABF9gSNPxeO3SNThCWyTMEVFk4Di1DmWFYo6UOxOAgVFhQ7W05",
+    clientSecret: "Oc8sWrJd6Hl6y5TBz8Rx54bORRnI8MSrJBcem8S5",
+    environment: "sandbox",
+    redirectUri: "http://localhost:8000/callback"
+    //redirectUri: `https://${req.hostname}/callback`
+})
+console.log(uri)
