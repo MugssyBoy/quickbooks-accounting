@@ -27,7 +27,7 @@ class Quickbooks {
     async getVendor() {
         try {
             const companyID = oauthClient.getToken().realmId;
-            const url = oauthClient.environment == "sandbox" ? OAuthClient.environment.sandbox : OAuthClient.environment.production;
+            const url = oauthClient.environment == key.QB_ENVIRONMENT ? OAuthClient.environment.sandbox : OAuthClient.environment.production;
             let vendor = await oauthClient.makeApiCall({ url: `${url}v3/company/${companyID}/query?query=select%20*%20from%20vendor&minorversion=51` });
             return vendor;
         } catch (err) {
@@ -38,7 +38,7 @@ class Quickbooks {
     async getCompanyInfo() {
         try {
             const companyID = oauthClient.getToken().realmId;
-            const url = oauthClient.environment == "sandbox" ? OAuthClient.environment.sandbox : OAuthClient.environment.production;
+            const url = oauthClient.environment == key.QB_ENVIRONMENT ? OAuthClient.environment.sandbox : OAuthClient.environment.production;
             let companyName = await oauthClient.makeApiCall({ url: `${url}v3/company/${companyID}/companyinfo/${companyID}` });
             return companyName;
         } catch (err) {
@@ -49,7 +49,7 @@ class Quickbooks {
     async getClass() {
         try {
             const companyID = oauthClient.getToken().realmId;
-            const url = oauthClient.environment == "sandbox" ? OAuthClient.environment.sandbox : OAuthClient.environment.production;
+            const url = oauthClient.environment == key.QB_ENVIRONMENT ? OAuthClient.environment.sandbox : OAuthClient.environment.production;
             let companyName = await oauthClient.makeApiCall({ url: `${url}v3/company/${companyID}/companyinfo/${companyID}` });
             return companyName;
         } catch (err) {
@@ -60,7 +60,7 @@ class Quickbooks {
     async getAccount(params) {
         try {
             const companyID = oauthClient.getToken().realmId;
-            const url = oauthClient.environment == "sandbox" ? OAuthClient.environment.sandbox : OAuthClient.environment.production;
+            const url = oauthClient.environment == key.QB_ENVIRONMENT ? OAuthClient.environment.sandbox : OAuthClient.environment.production;
             let account = await oauthClient.makeApiCall({ url: `${url}v3/company/${companyID}/query?query=select%20*%20from%20Account%20where%20Classification%20=%20'${params}'&minorversion=51` });
             return account;
         } catch (err) {
@@ -71,7 +71,7 @@ class Quickbooks {
     async getTerm() {
         try {
             const companyID = oauthClient.getToken().realmId;
-            const url = oauthClient.environment == "sandbox" ? OAuthClient.environment.sandbox : OAuthClient.environment.production;
+            const url = oauthClient.environment == key.QB_ENVIRONMENT ? OAuthClient.environment.sandbox : OAuthClient.environment.production;
             let term = await oauthClient.makeApiCall({ url: `${url}v3/company/${companyID}/query?query=select%20*%20from%20Term` });
             return term;
         } catch (err) {
